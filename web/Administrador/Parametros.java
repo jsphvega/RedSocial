@@ -32,4 +32,9 @@ public class Parametros {
             + "Nombre='xyz1',Apellido1='xyz2',Apellido2='xyz3',Edad=xyz4,"
             + "Carrera='xyz5',Ano=xyz6,Direccion='xyz7',Telefono='xyz8',"
             + "Email='xyz9',Foto=xyz WHERE ID = 'xyz0'";
+    
+    //Variables que contienen los eliminar de los campos de la BD
+    static public String EliminarBDUsuarios = "DELETE FROM usuarios WHERE ID='xyz'";
+    static public String EliminarBDAristas = "DELETE FROM aristas WHERE "
+            + "IDInicio='xyz'";
 }

@@ -188,4 +188,32 @@ public class BaseDeDatos {
         }
         return true;
     }
+    
+    /**
+     * Método que permite eliminar datos en la Base de Datos.
+     * @param Instruccion = Nombres de todos los campos de la tabla
+     * @param Filtro = Contiene la instruccion si se desea filtrar datos 
+     * (where CAMPOTABLA = 'DATO')
+     * @return Boolean si se eliminaron los datos o no.
+     */
+    public boolean EliminarDatos(String Instruccion, String Filtro) {      
+        //Prueba que se pueden eliminar los datos
+        try{
+            ConectarBase(); //Llama al método de conectar base
+            
+            //Asigna y envia los datos a la BD
+            Instruccion = Instruccion.replace("xyz", Filtro);
+            Estado.execute(Instruccion);
+            
+        } catch (Exception e){
+            System.out.println(e);
+            return false;
+        } finally {
+            try
+            {   Conexion.close(); }
+            catch (Exception e)
+            {   }
+        }
+        return true;
+    }     
 }
